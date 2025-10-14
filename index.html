@@ -1,1 +1,75 @@
-<h1>page test</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSI 2025 - Certificate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen flex flex-col">
+    <div class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+        <h1 class="text-5xl font-bold text-gray-800 mb-2 tracking-tight">
+            Certificacion 2025
+        </h1>
+        <p class="text-gray-500 text-lg mb-12">Busca personas por DNI o nombre</p>
+        <div class="w-full max-w-2xl mb-8">
+            <div class="flex gap-3 shadow-lg rounded-full p-1 bg-white hover:shadow-xl transition-shadow duration-300">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Ingresa DNI o nombre..." 
+                    class="flex-1 px-6 py-3 outline-none text-gray-800 placeholder-gray-400 rounded-full"
+                />
+                <button 
+                    onclick="buscar()"
+                    class="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition-colors duration-300 cursor-pointer"
+                >
+                    Buscar
+                </button>
+            </div>
+        </div>
+        <div id="resultados" class="w-full max-w-2xl mt-8"></div>
+    </div>
+    <footer class="w-full bg-white border-t border-gray-200 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3">Navegación</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="list.html" class="text-blue-500 hover:text-blue-700 transition-colors">
+                                Lista Completa
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3">Información</h3>
+                    <p class="text-gray-600 text-sm">Sistema de búsqueda de participantes al V Seminario Internacional: 
+                        Ciencia de Datos y Tecnologías de la Información y Comunicación. - 2025</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3">Contacto</h3>
+                    <p class="text-gray-600 text-sm">TecnoJuliaca@gmail.com</p>
+                    <h3 class="font-semibold text-gray-800 mb-3 mt-8">Celular</h3>
+                    <p class="text-gray-600 text-sm"> +51 938465708</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-6 mt-6">
+                <p class="text-center text-gray-600 text-sm mb-2">
+                    © 2025 Buscador de Participantes. Todos los derechos reservados.
+                </p>
+                <div class="flex justify-center gap-4 text-xs text-gray-500">
+                    <span>Uberzito INC</span>
+                    <span>•</span>
+                    <span>System Certificate</span>
+                    <span>•</span>
+                    <span>Versión 1.0</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="data.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
