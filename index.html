@@ -38,7 +38,7 @@
                     </div>
                     
                     <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 border border-blue-100">
-                        <p class="text-sm text-gray-500 mb-2 font-semibold">Código de Inscripción</p>
+                        <p class="text-sm text-gray-500 mb-2 font-semibold">Código unico de Inscripción</p>
                         <p id="codigo" class="text-xl font-mono font-bold text-gray-800"></p>
                     </div>
                 </div>
@@ -94,88 +94,7 @@
         <p class="text-xs text-gray-500">Uberzito INC • System Certificate • Versión 0.2</p>
     </footer>
     <script>
-        async function cargarDatos() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const codigo = urlParams.get('key');
-            const q = urlParams.get('q');
-
-            if (!codigo) {
-                mostrarBusqueda();
-                return;
-            }
-            try {
-                let url = `https://script.google.com/macros/s/AKfycbxiYDkrpOFLp86MlezuzyyPNBr5pV7OUYEbimvGHYIsmoWe-ZzubV-YyO-weHjspI0e/exec?key=${codigo}`;
-                
-                if (q) {
-                    url += `&q=${q}`;
-                }
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error('Error en la respuesta del servidor');
-                }
-                const data = await response.json();
-                if (data.error) {
-                    mostrarError(data.error);
-                    return;
-                }
-                mostrarResultado(data);
-            } catch (error) {
-                mostrarError('Error al conectar con el servidor: ' + error.message);
-            }
-        }
-
-        function mostrarBusqueda() {
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('search').classList.remove('hidden');
-        }
-
-        function buscarPorCodigo() {
-            const codigo = document.getElementById('codigoInput').value.trim();
-            if (codigo) {
-                window.location.href = `?key=${codigo}`;
-            }
-        }
-
-        function volverBusqueda() {
-            window.location.href = window.location.pathname;
-        }
-
-        function mostrarResultado(data) {
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('result').classList.remove('hidden');
-            document.getElementById('nombre').textContent = data['Nombres y apellidos'];
-            document.getElementById('condicion').textContent = data.Condicion;
-            document.getElementById('codigoCertificado').textContent = data.Codigo;
-            document.getElementById('codigo').textContent = data.Codificacion;
-            document.getElementById('mensaje').textContent = data.mensaje;
-            
-            // Mostrar alerta si existe
-            if (data.alerta) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Atención',
-                    text: data.alerta,
-                    confirmButtonColor: '#4F46E5',
-                    confirmButtonText: 'Entendido'
-                });
-            }
-        }
-        function mostrarError(mensaje) {
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('error').classList.remove('hidden');
-            document.getElementById('errorMessage').textContent = mensaje;
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            const input = document.getElementById('codigoInput');
-            if (input) {
-                input.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        buscarPorCodigo();
-                    }
-                });
-            }
-            cargarDatos();
-        });
+        const _0x4a8bcd=_0x34d1;(function(_0x49384d,_0x162695){const _0x56655b=_0x34d1,_0x4a3238=_0x49384d();while(!![]){try{const _0x6674f9=parseInt(_0x56655b(0xf6))/0x1*(parseInt(_0x56655b(0x101))/0x2)+parseInt(_0x56655b(0x106))/0x3*(parseInt(_0x56655b(0xe1))/0x4)+-parseInt(_0x56655b(0xf3))/0x5*(parseInt(_0x56655b(0x10a))/0x6)+parseInt(_0x56655b(0xea))/0x7*(parseInt(_0x56655b(0xef))/0x8)+-parseInt(_0x56655b(0xe7))/0x9+parseInt(_0x56655b(0xf9))/0xa*(parseInt(_0x56655b(0xf0))/0xb)+-parseInt(_0x56655b(0x10d))/0xc;if(_0x6674f9===_0x162695)break;else _0x4a3238['push'](_0x4a3238['shift']());}catch(_0x3df146){_0x4a3238['push'](_0x4a3238['shift']());}}}(_0xdc83,0x3221c));function _0x34d1(_0x180397,_0x282b0a){const _0xdc83cc=_0xdc83();return _0x34d1=function(_0x34d137,_0x422fce){_0x34d137=_0x34d137-0xe0;let _0x7d2598=_0xdc83cc[_0x34d137];return _0x7d2598;},_0x34d1(_0x180397,_0x282b0a);}async function cargarDatos(){const _0x3150c2=_0x34d1,_0x466767=new URLSearchParams(window[_0x3150c2(0x105)][_0x3150c2(0x102)]),_0x26ab8a=_0x466767[_0x3150c2(0xfc)](_0x3150c2(0xfd)),_0x415972=_0x466767['get']('q');if(!_0x26ab8a){mostrarBusqueda();return;}try{let _0x3d55c2=_0x3150c2(0x10c)+_0x26ab8a;_0x415972&&(_0x3d55c2+=_0x3150c2(0xf8)+_0x415972);const _0x53f053=await fetch(_0x3d55c2);if(!_0x53f053['ok'])throw new Error(_0x3150c2(0xe4));const _0x474e67=await _0x53f053[_0x3150c2(0xe8)]();if(_0x474e67['error']){mostrarError(_0x474e67[_0x3150c2(0x109)]);return;}mostrarResultado(_0x474e67);}catch(_0x3193e8){mostrarError(_0x3150c2(0x103)+_0x3193e8[_0x3150c2(0xe6)]);}}function _0xdc83(){const _0x1ac2ba=['remove','8HntDic','102828orZbps','addEventListener','Enter','1010oCjlrX','DOMContentLoaded','value','1VKLeld','warning','&q=','410XOjWCJ','loading','classList','get','key','result','textContent','?key=','650554TZwGjR','search','Error\x20al\x20conectar\x20con\x20el\x20servidor:\x20','pathname','location','12621EaKeOu','codigoInput','hidden','error','1482UdGYDE','#4F46E5','https://script.google.com/macros/s/AKfycbxiYDkrpOFLp86MlezuzyyPNBr5pV7OUYEbimvGHYIsmoWe-ZzubV-YyO-weHjspI0e/exec?key=','10086876RNDldO','getElementById','codigo','364iOnCCq','keypress','mensaje','Error\x20en\x20la\x20respuesta\x20del\x20servidor','alerta','message','3529233WWYyLq','json','add','2775934zljzKi','codigoCertificado','Nombres\x20y\x20apellidos','Codigo'];_0xdc83=function(){return _0x1ac2ba;};return _0xdc83();}function mostrarBusqueda(){const _0x490f19=_0x34d1;document[_0x490f19(0x10e)](_0x490f19(0xfa))[_0x490f19(0xfb)][_0x490f19(0xe9)](_0x490f19(0x108)),document['getElementById']('search')['classList'][_0x490f19(0xee)](_0x490f19(0x108));}function buscarPorCodigo(){const _0x436006=_0x34d1,_0x459998=document['getElementById'](_0x436006(0x107))[_0x436006(0xf5)]['trim']();_0x459998&&(window[_0x436006(0x105)]['href']=_0x436006(0x100)+_0x459998);}function volverBusqueda(){const _0x2e21dd=_0x34d1;window[_0x2e21dd(0x105)]['href']=window[_0x2e21dd(0x105)][_0x2e21dd(0x104)];}function mostrarResultado(_0x181dcd){const _0x59533e=_0x34d1;document[_0x59533e(0x10e)](_0x59533e(0xfa))[_0x59533e(0xfb)]['add'](_0x59533e(0x108)),document[_0x59533e(0x10e)](_0x59533e(0xfe))[_0x59533e(0xfb)]['remove'](_0x59533e(0x108)),document[_0x59533e(0x10e)]('nombre')[_0x59533e(0xff)]=_0x181dcd[_0x59533e(0xec)],document['getElementById']('condicion')[_0x59533e(0xff)]=_0x181dcd['Condicion'],document[_0x59533e(0x10e)](_0x59533e(0xeb))[_0x59533e(0xff)]=_0x181dcd[_0x59533e(0xed)],document[_0x59533e(0x10e)](_0x59533e(0xe0))[_0x59533e(0xff)]=_0x181dcd['Codificacion'],document['getElementById'](_0x59533e(0xe3))[_0x59533e(0xff)]=_0x181dcd[_0x59533e(0xe3)],_0x181dcd[_0x59533e(0xe5)]&&Swal['fire']({'icon':_0x59533e(0xf7),'title':'Atención','text':_0x181dcd[_0x59533e(0xe5)],'confirmButtonColor':_0x59533e(0x10b),'confirmButtonText':'Entendido'});}function mostrarError(_0x5e04db){const _0x30a97e=_0x34d1;document[_0x30a97e(0x10e)](_0x30a97e(0xfa))['classList'][_0x30a97e(0xe9)](_0x30a97e(0x108)),document[_0x30a97e(0x10e)]('error')['classList'][_0x30a97e(0xee)](_0x30a97e(0x108)),document[_0x30a97e(0x10e)]('errorMessage')['textContent']=_0x5e04db;}document[_0x4a8bcd(0xf1)](_0x4a8bcd(0xf4),function(){const _0x25f539=_0x4a8bcd,_0x5d8cd3=document[_0x25f539(0x10e)](_0x25f539(0x107));_0x5d8cd3&&_0x5d8cd3[_0x25f539(0xf1)](_0x25f539(0xe2),function(_0x1cbfaa){const _0x8a1c30=_0x25f539;_0x1cbfaa['key']===_0x8a1c30(0xf2)&&buscarPorCodigo();}),cargarDatos();});
     </script>
 </body>
 </html>
